@@ -17,7 +17,7 @@ RUN npm run build
 FROM docker.io/nginx:alpine
 
 # Copy the static assets from the build stage to the web server
-COPY /app/dist/santeLib /usr/share/nginx/html
+COPY ./node_modules/postcss-loader/dist/santeLib /usr/share/nginx/html
 
 # Expose the web server's port (usually port 80)
 EXPOSE 80
